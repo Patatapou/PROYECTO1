@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago - Xteam</title>
+    <link rel="stylesheet" href="stylePago.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Xteam</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Tienda</a></li>
+                <li><a href="biblioteca.html">Biblioteca</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="reviews.html">Reseñas</a></li>
+                <li><a href="nosotros.html">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="checkout-container">
+            <h1>Selecciona Método de Pago</h1>
+            
+            <div class="checkout-steps">
+                <div class="step active">Carrito</div>
+                <div class="step active">Pago</div>
+                <div class="step">Confirmación</div>
+            </div>
+
+            <div class="payment-methods">
+                <!-- Método: Créditos (solo para usuarios registrados) -->
+                <div class="payment-method" id="method-creditos" style="display: none;">
+                    <input type="radio" name="payment-method" id="creditos" value="creditos">
+                    <label for="creditos">
+                        <div class="method-info">
+                            <h3>Pagar con Créditos</h3>
+                            <p id="creditos-disponibles">Créditos disponibles: $0.00</p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Método: Tarjeta -->
+                <div class="payment-method">
+                    <input type="radio" name="payment-method" id="tarjeta" value="tarjeta" checked>
+                    <label for="tarjeta">
+                        <div class="method-info">
+                            <h3>Tarjeta de Crédito/Débito</h3>
+                            <p>Visa, Mastercard, American Express</p>
+                        </div>
+                    </label>
+                    
+                    <div class="payment-details" id="tarjeta-details">
+                        <div id="card-element">
+                            <!-- Stripe Elements se insertará aquí -->
+                        </div>
+                        <div id="card-errors" class="error-message"></div>
+                    </div>
+                </div>
+
+                <!-- Método: PayPal -->
+                <div class="payment-method">
+                    <input type="radio" name="payment-method" id="paypal" value="paypal">
+                    <label for="paypal">
+                        <div class="method-info">
+                            <h3>PayPal</h3>
+                            <p>Paga rápido y seguro con tu cuenta PayPal</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3>Resumen de Compra</h3>
+                <div id="resumen-productos">
+                    <!-- Productos del carrito -->
+                </div>
+                <div class="order-total">
+                    <strong>Total: <span id="total-compra">$0.00</span></strong>
+                </div>
+            </div>
+
+            <div class="checkout-actions">
+                <button id="btn-procesar-pago" class="btn-primary" disabled>
+                    Proceder al Pago
+                </button>
+                <a href="carrito.html" class="btn-secondary">Volver al Carrito</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de procesamiento -->
+    <div id="processing-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="processing-spinner"></div>
+            <h3>Procesando tu pago...</h3>
+            <p>Por favor no cierres esta ventana.</p>
+        </div>
+    </div>
+</body>
+</html>

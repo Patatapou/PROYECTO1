@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Biblioteca - Xteam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Xteam</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Tienda</a></li>
+                <li><a href="biblioteca.html">Biblioteca</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="reviews.html">Reseñas</a></li>
+                <li><a href="nosotros.html">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="biblioteca-container">
+            <h1>Mi Biblioteca</h1>
+            
+            <div class="biblioteca-stats">
+                <div class="stat-card">
+                    <h3>Juegos Totales</h3>
+                    <div class="stat-number" id="total-juegos">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Juegos Instalados</h3>
+                    <div class="stat-number" id="juegos-instalados">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Tiempo Jugado</h3>
+                    <div class="stat-number" id="tiempo-jugado">0h</div>
+                </div>
+            </div>
+
+            <div class="biblioteca-filters">
+                <button class="filter-btn active" data-filter="todos">Todos los Juegos</button>
+                <button class="filter-btn" data-filter="instalados">Instalados</button>
+                <button class="filter-btn" data-filter="recientes">Recientes</button>
+                <input type="text" placeholder="Buscar en biblioteca..." class="search-biblioteca" id="search-biblioteca">
+            </div>
+
+            <div class="juegos-lista" id="juegos-lista">
+                <!-- Los juegos se cargan dinámicamente -->
+                <div class="biblioteca-vacia" id="biblioteca-vacia">
+                    <div class="vacia-icon">🎮</div>
+                    <h3>Tu biblioteca está vacía</h3>
+                    <p>Compra algunos juegos para comenzar tu colección</p>
+                    <a href="index.html" class="btn-primary">Explorar Tienda</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/biblioteca.js"></script>
+</body>
+</html>

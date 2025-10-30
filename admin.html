@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Xteam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Panel de Administración - Xteam</h1>
+            <div class="admin-nav">
+                <a href="#estadisticas">Estadísticas</a>
+                <a href="#usuarios">Usuarios</a>
+                <a href="#videojuegos">Videojuegos</a>
+                <a href="#ventas">Ventas</a>
+                <a href="index.html">Volver a Tienda</a>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <!-- Sección de Estadísticas -->
+            <section id="estadisticas" class="admin-section">
+                <h2>Estadísticas Generales</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Clientes</h3>
+                        <div class="stat-number" id="total-clientes">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Desarrolladores</h3>
+                        <div class="stat-number" id="total-desarrolladores">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Videojuegos</h3>
+                        <div class="stat-number" id="total-videojuegos">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Ventas</h3>
+                        <div class="stat-number" id="total-ventas">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Ingresos Totales</h3>
+                        <div class="stat-number" id="ingresos-totales">$0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Reseñas</h3>
+                        <div class="stat-number" id="total-resenas">0</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Gestión de Usuarios -->
+            <section id="usuarios" class="admin-section">
+                <h2>Gestión de Usuarios</h2>
+                <div class="section-actions">
+                    <button class="btn-primary" onclick="mostrarModalUsuario()">Agregar Usuario</button>
+                </div>
+                <div class="table-container">
+                    <table id="tabla-usuarios">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Usuario</th>
+                                <th>Email</th>
+                                <th>Tipo</th>
+                                <th>Fecha Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-usuarios">
+                            <!-- Los datos se cargan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección de Gestión de Videojuegos -->
+            <section id="videojuegos" class="admin-section">
+                <h2>Gestión de Videojuegos</h2>
+                <div class="section-actions">
+                    <button class="btn-primary" onclick="mostrarModalVideojuego()">Agregar Videojuego</button>
+                </div>
+                <div class="table-container">
+                    <table id="tabla-videojuegos">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Desarrollador</th>
+                                <th>Precio</th>
+                                <th>Fecha Lanzamiento</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-videojuegos">
+                            <!-- Los datos se cargan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sección de Ventas -->
+            <section id="ventas" class="admin-section">
+                <h2>Historial de Ventas</h2>
+                <div class="table-container">
+                    <table id="tabla-ventas">
+                        <thead>
+                            <tr>
+                                <th>ID Compra</th>
+                                <th>Usuario</th>
+                                <th>Total</th>
+                                <th>Método Pago</th>
+                                <th>Fecha</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-ventas">
+                            <!-- Los datos se cargan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para agregar/editar usuario -->
+    <div id="modal-usuario" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalUsuario()">&times;</span>
+            <h3 id="titulo-modal-usuario">Agregar Usuario</h3>
+            <form id="form-usuario">
+                <input type="hidden" id="usuario-id">
+                <div class="form-group">
+                    <label for="usuario-nombre">Nombre de Usuario:</label>
+                    <input type="text" id="usuario-nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="usuario-email">Email:</label>
+                    <input type="email" id="usuario-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="usuario-password">Contraseña:</label>
+                    <input type="password" id="usuario-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="usuario-tipo">Tipo de Usuario:</label>
+                    <select id="usuario-tipo" required>
+                        <option value="cliente">Cliente</option>
+                        <option value="desarrollador">Desarrollador</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Guardar</button>
+                    <button type="button" class="btn-secondary" onclick="cerrarModalUsuario()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Xteam</title>
+    <link rel="stylesheet" href="styleCarrito.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Xteam</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Tienda</a></li>
+                <li><a href="biblioteca.html">Biblioteca</a></li>
+                <li><a href="reviews.html">Reseñas</a></li>
+                <li><a href="nosotros.html">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="carrito-container">
+            <h1>Tu Carrito de Compras</h1>
+            
+            <div class="carrito-content">
+                <!-- Lista de productos -->
+                <div class="productos-lista" id="productos-lista">
+                    <!-- Los productos se cargan dinámicamente -->
+                    <div class="carrito-vacio" id="carrito-vacio">
+                        <p>Tu carrito está vacío</p>
+                        <a href="index.html" class="btn-primary">Ir a la Tienda</a>
+                    </div>
+                </div>
+
+                <!-- Resumen del pedido -->
+                <div class="resumen-pedido">
+                    <h3>Resumen del Pedido</h3>
+                    
+                    <div class="resumen-detalles">
+                        <div class="resumen-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="resumen-item">
+                            <span>Descuentos:</span>
+                            <span id="descuentos">$0.00</span>
+                        </div>
+                        <div class="resumen-total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <button id="btn-proceder-pago" class="btn-primary" disabled>
+                        Proceder al Pago
+                    </button>
+                    
+                    <a href="index.html" class="btn-secondary">Seguir Comprando</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/carrito.js"></script>
+</body>
+</html>

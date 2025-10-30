@@ -12,7 +12,8 @@
             <a href="../index.html" class="logo">Xteam</a>
             <ul class="nav-links">
                 <li><a href="../index.html">Tienda</a></li>
-                <li><a href="#">Biblioteca</a></li>
+                <li><a href="../biblioteca.html">Biblioteca</a></li>
+                <li><a href="../carrito.html">Carrito</a></li>
                 <li><a href="../reviews.html">Reseñas</a></li>
                 <li><a href="../nosotros.html">Acerca de</a></li>
             </ul>
@@ -89,7 +90,14 @@
                 </div>
 
                 <div class="purchase-options">
-                    <button class="btn-buy-now">Comprar Ahora</button>
+                    <a href="../metodoPago.html" class="enlaceA"><button class="btn-buy-now">Comprar Ahora</button></a>
+                    <button class="btn-agregar-carrito" onclick="agregarAlCarrito({
+                        id: 5,
+                        titulo: 'Left 4 Dead 2',
+                        precio: 199.99,
+                        imagen: '../imgs/left-4-dead-2-1.jpg'})">
+                        Agregar al Carrito
+                    </button>
                 </div>
 
                 <div class="purchase-details">
